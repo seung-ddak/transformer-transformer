@@ -1,0 +1,426 @@
+<mujoco model="wheeled_bimanual">
+  <compiler autolimits="true" angle="radian"/>
+  <visual>
+    <global offwidth="800" offheight="600"/>
+  </visual>
+  <default>
+    <default class="/"/>
+    <default class="wheeled_box/">
+      <joint axis="0 1 0" solreflimit="0.0050000000000000001 1" armature="0.050000000000000003" damping="1" frictionloss="0.20000000000000001"/>
+      <geom type="capsule" condim="1" group="3" size="0.012" rgba="0.95999999999999996 0.93999999999999995 0.92000000000000004 1" friction="1" density="300" shellinertia="true"/>
+      <site group="0"/>
+      <equality solref="0.0050000000000000001 1"/>
+      <default class="wheeled_box/small_geom">
+        <geom size="0.0080000000000000002"/>
+      </default>
+      <default class="wheeled_box/body_panel">
+        <geom type="box" rgba="0.97999999999999998 0.95999999999999996 0.93999999999999995 1" density="100" shellinertia="false"/>
+      </default>
+      <default class="wheeled_box/accent_orange">
+        <geom type="box" rgba="0.95999999999999996 0.52000000000000002 0.12 1" density="100" shellinertia="false"/>
+      </default>
+      <default class="wheeled_box/motor">
+        <geom type="cylinder" rgba="0.75 0.75 0.75 1" density="2000" shellinertia="false"/>
+        <default class="wheeled_box/big_motor">
+          <geom size="0.045999999999999999 0.02"/>
+        </default>
+        <default class="wheeled_box/small_motor">
+          <geom size="0.024 0.017999999999999999"/>
+        </default>
+      </default>
+      <default class="wheeled_box/wheel">
+        <geom type="cylinder" condim="3" size="0.040000000000000001 0.02" rgba="0.14999999999999999 0.14999999999999999 0.14999999999999999 1" friction="1 0.10000000000000001 0.10000000000000001" density="1200" shellinertia="false"/>
+      </default>
+      <default class="wheeled_box/caster_wheel">
+        <geom type="sphere" condim="3" size="0.025000000000000001" rgba="0.14999999999999999 0.14999999999999999 0.14999999999999999 1" friction="0.80000000000000004 0.02 0.01" density="1200" shellinertia="false"/>
+      </default>
+      <default class="wheeled_box/gripper_finger">
+        <geom type="box" rgba="0.34999999999999998 0.34999999999999998 0.34999999999999998 1" density="200" shellinertia="false"/>
+      </default>
+      <default class="wheeled_box/shoulder">
+        <joint range="-3.1415899999999999 3.1415899999999999" armature="0.10000000000000001" damping="5"/>
+        <position ctrlrange="-3.1415899999999999 3.1415899999999999" forcerange="-100 100" kp="200" kv="20"/>
+      </default>
+      <default class="wheeled_box/elbow">
+        <joint range="-2.5 2.5" armature="0.080000000000000002" damping="4"/>
+        <position ctrlrange="-2.5 2.5" forcerange="-80 80" kp="150" kv="15"/>
+      </default>
+      <default class="wheeled_box/wrist">
+        <joint range="-2 2" armature="0.02" damping="1"/>
+        <position ctrlrange="-2 2" forcerange="-40 40" kp="60" kv="6"/>
+      </default>
+    </default>
+    <default class="wheeled_box/spine/">
+      <joint axis="0 1 0" solreflimit="0.0050000000000000001 1" armature="0.050000000000000003" damping="1" frictionloss="0.20000000000000001"/>
+      <geom type="capsule" condim="1" group="3" size="0.012" rgba="0.95999999999999996 0.93999999999999995 0.92000000000000004 1" friction="1" density="300" shellinertia="true"/>
+      <site group="0"/>
+      <equality solref="0.0050000000000000001 1"/>
+      <default class="wheeled_box/spine/small_geom">
+        <geom size="0.0080000000000000002"/>
+      </default>
+      <default class="wheeled_box/spine/body_panel">
+        <geom type="box" rgba="0.97999999999999998 0.95999999999999996 0.93999999999999995 1" density="100" shellinertia="false"/>
+      </default>
+      <default class="wheeled_box/spine/accent_orange">
+        <geom type="box" rgba="0.95999999999999996 0.52000000000000002 0.12 1" density="100" shellinertia="false"/>
+      </default>
+      <default class="wheeled_box/spine/motor">
+        <geom type="cylinder" rgba="0.75 0.75 0.75 1" density="2000" shellinertia="false"/>
+        <default class="wheeled_box/spine/big_motor">
+          <geom size="0.045999999999999999 0.02"/>
+        </default>
+        <default class="wheeled_box/spine/small_motor">
+          <geom size="0.024 0.017999999999999999"/>
+        </default>
+      </default>
+      <default class="wheeled_box/spine/wheel">
+        <geom type="cylinder" condim="3" size="0.040000000000000001 0.02" rgba="0.14999999999999999 0.14999999999999999 0.14999999999999999 1" friction="1 0.10000000000000001 0.10000000000000001" density="1200" shellinertia="false"/>
+      </default>
+      <default class="wheeled_box/spine/caster_wheel">
+        <geom type="sphere" condim="3" size="0.025000000000000001" rgba="0.14999999999999999 0.14999999999999999 0.14999999999999999 1" friction="0.80000000000000004 0.02 0.01" density="1200" shellinertia="false"/>
+      </default>
+      <default class="wheeled_box/spine/gripper_finger">
+        <geom type="box" rgba="0.34999999999999998 0.34999999999999998 0.34999999999999998 1" density="200" shellinertia="false"/>
+      </default>
+      <default class="wheeled_box/spine/shoulder">
+        <joint range="-3.1415899999999999 3.1415899999999999" armature="0.10000000000000001" damping="5"/>
+        <position ctrlrange="-3.1415899999999999 3.1415899999999999" forcerange="-100 100" kp="200" kv="20"/>
+      </default>
+      <default class="wheeled_box/spine/elbow">
+        <joint range="-2.5 2.5" armature="0.080000000000000002" damping="4"/>
+        <position ctrlrange="-2.5 2.5" forcerange="-80 80" kp="150" kv="15"/>
+      </default>
+      <default class="wheeled_box/spine/wrist">
+        <joint range="-2 2" armature="0.02" damping="1"/>
+        <position ctrlrange="-2 2" forcerange="-40 40" kp="60" kv="6"/>
+      </default>
+    </default>
+    <default class="wheeled_box/spine/torso/">
+      <joint axis="0 1 0" solreflimit="0.0050000000000000001 1" armature="0.050000000000000003" damping="1" frictionloss="0.20000000000000001"/>
+      <geom type="capsule" condim="1" group="3" size="0.012" rgba="0.95999999999999996 0.93999999999999995 0.92000000000000004 1" friction="1" density="300" shellinertia="true"/>
+      <site group="0"/>
+      <equality solref="0.0050000000000000001 1"/>
+      <default class="wheeled_box/spine/torso/small_geom">
+        <geom size="0.0080000000000000002"/>
+      </default>
+      <default class="wheeled_box/spine/torso/body_panel">
+        <geom type="box" rgba="0.97999999999999998 0.95999999999999996 0.93999999999999995 1" density="100" shellinertia="false"/>
+      </default>
+      <default class="wheeled_box/spine/torso/accent_orange">
+        <geom type="box" rgba="0.95999999999999996 0.52000000000000002 0.12 1" density="100" shellinertia="false"/>
+      </default>
+      <default class="wheeled_box/spine/torso/motor">
+        <geom type="cylinder" rgba="0.75 0.75 0.75 1" density="2000" shellinertia="false"/>
+        <default class="wheeled_box/spine/torso/big_motor">
+          <geom size="0.045999999999999999 0.02"/>
+        </default>
+        <default class="wheeled_box/spine/torso/small_motor">
+          <geom size="0.024 0.017999999999999999"/>
+        </default>
+      </default>
+      <default class="wheeled_box/spine/torso/wheel">
+        <geom type="cylinder" condim="3" size="0.040000000000000001 0.02" rgba="0.14999999999999999 0.14999999999999999 0.14999999999999999 1" friction="1 0.10000000000000001 0.10000000000000001" density="1200" shellinertia="false"/>
+      </default>
+      <default class="wheeled_box/spine/torso/caster_wheel">
+        <geom type="sphere" condim="3" size="0.025000000000000001" rgba="0.14999999999999999 0.14999999999999999 0.14999999999999999 1" friction="0.80000000000000004 0.02 0.01" density="1200" shellinertia="false"/>
+      </default>
+      <default class="wheeled_box/spine/torso/gripper_finger">
+        <geom type="box" rgba="0.34999999999999998 0.34999999999999998 0.34999999999999998 1" density="200" shellinertia="false"/>
+      </default>
+      <default class="wheeled_box/spine/torso/shoulder">
+        <joint range="-3.1415899999999999 3.1415899999999999" armature="0.10000000000000001" damping="5"/>
+        <position ctrlrange="-3.1415899999999999 3.1415899999999999" forcerange="-100 100" kp="200" kv="20"/>
+      </default>
+      <default class="wheeled_box/spine/torso/elbow">
+        <joint range="-2.5 2.5" armature="0.080000000000000002" damping="4"/>
+        <position ctrlrange="-2.5 2.5" forcerange="-80 80" kp="150" kv="15"/>
+      </default>
+      <default class="wheeled_box/spine/torso/wrist">
+        <joint range="-2 2" armature="0.02" damping="1"/>
+        <position ctrlrange="-2 2" forcerange="-40 40" kp="60" kv="6"/>
+      </default>
+    </default>
+    <default class="wheeled_box/spine/torso/left_arm_7dof/">
+      <joint axis="0 1 0" solreflimit="0.0050000000000000001 1" armature="0.050000000000000003" damping="1" frictionloss="0.20000000000000001"/>
+      <geom type="capsule" condim="1" group="3" size="0.012" rgba="0.95999999999999996 0.93999999999999995 0.92000000000000004 1" friction="1" density="300" shellinertia="true"/>
+      <site group="0"/>
+      <equality solref="0.0050000000000000001 1"/>
+      <default class="wheeled_box/spine/torso/left_arm_7dof/small_geom">
+        <geom size="0.0080000000000000002"/>
+      </default>
+      <default class="wheeled_box/spine/torso/left_arm_7dof/body_panel">
+        <geom type="box" rgba="0.97999999999999998 0.95999999999999996 0.93999999999999995 1" density="100" shellinertia="false"/>
+      </default>
+      <default class="wheeled_box/spine/torso/left_arm_7dof/accent_orange">
+        <geom type="box" rgba="0.95999999999999996 0.52000000000000002 0.12 1" density="100" shellinertia="false"/>
+      </default>
+      <default class="wheeled_box/spine/torso/left_arm_7dof/motor">
+        <geom type="cylinder" rgba="0.75 0.75 0.75 1" density="2000" shellinertia="false"/>
+        <default class="wheeled_box/spine/torso/left_arm_7dof/big_motor">
+          <geom size="0.045999999999999999 0.02"/>
+        </default>
+        <default class="wheeled_box/spine/torso/left_arm_7dof/small_motor">
+          <geom size="0.024 0.017999999999999999"/>
+        </default>
+      </default>
+      <default class="wheeled_box/spine/torso/left_arm_7dof/wheel">
+        <geom type="cylinder" condim="3" size="0.040000000000000001 0.02" rgba="0.14999999999999999 0.14999999999999999 0.14999999999999999 1" friction="1 0.10000000000000001 0.10000000000000001" density="1200" shellinertia="false"/>
+      </default>
+      <default class="wheeled_box/spine/torso/left_arm_7dof/caster_wheel">
+        <geom type="sphere" condim="3" size="0.025000000000000001" rgba="0.14999999999999999 0.14999999999999999 0.14999999999999999 1" friction="0.80000000000000004 0.02 0.01" density="1200" shellinertia="false"/>
+      </default>
+      <default class="wheeled_box/spine/torso/left_arm_7dof/gripper_finger">
+        <geom type="box" rgba="0.34999999999999998 0.34999999999999998 0.34999999999999998 1" density="200" shellinertia="false"/>
+      </default>
+      <default class="wheeled_box/spine/torso/left_arm_7dof/shoulder">
+        <joint range="-3.1415899999999999 3.1415899999999999" armature="0.10000000000000001" damping="5"/>
+        <position ctrlrange="-3.1415899999999999 3.1415899999999999" forcerange="-100 100" kp="200" kv="20"/>
+      </default>
+      <default class="wheeled_box/spine/torso/left_arm_7dof/elbow">
+        <joint range="-2.5 2.5" armature="0.080000000000000002" damping="4"/>
+        <position ctrlrange="-2.5 2.5" forcerange="-80 80" kp="150" kv="15"/>
+      </default>
+      <default class="wheeled_box/spine/torso/left_arm_7dof/wrist">
+        <joint range="-2 2" armature="0.02" damping="1"/>
+        <position ctrlrange="-2 2" forcerange="-40 40" kp="60" kv="6"/>
+      </default>
+    </default>
+    <default class="wheeled_box/spine/torso/right_arm_7dof/">
+      <joint axis="0 1 0" solreflimit="0.0050000000000000001 1" armature="0.050000000000000003" damping="1" frictionloss="0.20000000000000001"/>
+      <geom type="capsule" condim="1" group="3" size="0.012" rgba="0.95999999999999996 0.93999999999999995 0.92000000000000004 1" friction="1" density="300" shellinertia="true"/>
+      <site group="0"/>
+      <equality solref="0.0050000000000000001 1"/>
+      <default class="wheeled_box/spine/torso/right_arm_7dof/small_geom">
+        <geom size="0.0080000000000000002"/>
+      </default>
+      <default class="wheeled_box/spine/torso/right_arm_7dof/body_panel">
+        <geom type="box" rgba="0.97999999999999998 0.95999999999999996 0.93999999999999995 1" density="100" shellinertia="false"/>
+      </default>
+      <default class="wheeled_box/spine/torso/right_arm_7dof/accent_orange">
+        <geom type="box" rgba="0.95999999999999996 0.52000000000000002 0.12 1" density="100" shellinertia="false"/>
+      </default>
+      <default class="wheeled_box/spine/torso/right_arm_7dof/motor">
+        <geom type="cylinder" rgba="0.75 0.75 0.75 1" density="2000" shellinertia="false"/>
+        <default class="wheeled_box/spine/torso/right_arm_7dof/big_motor">
+          <geom size="0.045999999999999999 0.02"/>
+        </default>
+        <default class="wheeled_box/spine/torso/right_arm_7dof/small_motor">
+          <geom size="0.024 0.017999999999999999"/>
+        </default>
+      </default>
+      <default class="wheeled_box/spine/torso/right_arm_7dof/wheel">
+        <geom type="cylinder" condim="3" size="0.040000000000000001 0.02" rgba="0.14999999999999999 0.14999999999999999 0.14999999999999999 1" friction="1 0.10000000000000001 0.10000000000000001" density="1200" shellinertia="false"/>
+      </default>
+      <default class="wheeled_box/spine/torso/right_arm_7dof/caster_wheel">
+        <geom type="sphere" condim="3" size="0.025000000000000001" rgba="0.14999999999999999 0.14999999999999999 0.14999999999999999 1" friction="0.80000000000000004 0.02 0.01" density="1200" shellinertia="false"/>
+      </default>
+      <default class="wheeled_box/spine/torso/right_arm_7dof/gripper_finger">
+        <geom type="box" rgba="0.34999999999999998 0.34999999999999998 0.34999999999999998 1" density="200" shellinertia="false"/>
+      </default>
+      <default class="wheeled_box/spine/torso/right_arm_7dof/shoulder">
+        <joint range="-3.1415899999999999 3.1415899999999999" armature="0.10000000000000001" damping="5"/>
+        <position ctrlrange="-3.1415899999999999 3.1415899999999999" forcerange="-100 100" kp="200" kv="20"/>
+      </default>
+      <default class="wheeled_box/spine/torso/right_arm_7dof/elbow">
+        <joint range="-2.5 2.5" armature="0.080000000000000002" damping="4"/>
+        <position ctrlrange="-2.5 2.5" forcerange="-80 80" kp="150" kv="15"/>
+      </default>
+      <default class="wheeled_box/spine/torso/right_arm_7dof/wrist">
+        <joint range="-2 2" armature="0.02" damping="1"/>
+        <position ctrlrange="-2 2" forcerange="-40 40" kp="60" kv="6"/>
+      </default>
+    </default>
+  </default>
+  <custom>
+    <numeric name="wheeled_box/spine/spine_joint_lower\joint\range\1\range\y" size="2" data="0.050000000000000003 0.25"/>
+    <text name="wheeled_box/spine/spine_range" data="spine_joint_lower\joint\range\1\range\y;spine_joint_upper\joint\range\1\range\y;spine_joint_lower\actuator\ctrlrange\1\range\y;spine_joint_upper\actuator\ctrlrange\1\range\y;home\key\qpos\0\range\y*0;home\key\qpos\1\range\y*0;home\key\ctrl\0\range\y*0;home\key\ctrl\1\range\y*0;spine_lower_front\geom\size\2\range\y*0.5+0.02;spine_lower_back\geom\size\2\range\y*0.5+0.02;spine_lower_left\geom\size\2\range\y*0.5+0.02;spine_lower_right\geom\size\2\range\y*0.5+0.02;spine_lower_front\geom\pos\2\range\y*0.5+0.02;spine_lower_back\geom\pos\2\range\y*0.5+0.02;spine_lower_left\geom\pos\2\range\y*0.5+0.02;spine_lower_right\geom\pos\2\range\y*0.5+0.02;spine_middle_front\geom\size\2\range\y*0.5+0.02;spine_middle_back\geom\size\2\range\y*0.5+0.02;spine_middle_left\geom\size\2\range\y*0.5+0.02;spine_middle_right\geom\size\2\range\y*0.5+0.02;spine_middle_front\geom\pos\2\range\y*0.5+0.02;spine_middle_back\geom\pos\2\range\y*0.5+0.02;spine_middle_left\geom\pos\2\range\y*0.5+0.02;spine_middle_right\geom\pos\2\range\y*0.5+0.02;spine_upper_front\geom\size\2\range\y*0.5+0.02;spine_upper_back\geom\size\2\range\y*0.5+0.02;spine_upper_left\geom\size\2\range\y*0.5+0.02;spine_upper_right\geom\size\2\range\y*0.5+0.02;spine_upper_front\geom\pos\2\range\y*0.5+0.02;spine_upper_back\geom\pos\2\range\y*0.5+0.02;spine_upper_left\geom\pos\2\range\y*0.5+0.02;spine_upper_right\geom\pos\2\range\y*0.5+0.02;torso|torso_lean_mount\site\pos\2\range\y+0.04"/>
+    <numeric name="wheeled_box/spine/torso/left_arm_7dof/left_shoulder_roll_link\geom\fromto\4\range\y" size="2" data="0.040000000000000001 0.10000000000000001"/>
+    <text name="wheeled_box/spine/torso/left_arm_7dof/left_shoulder_roll_y_offset" data="left_shoulder_roll_link\geom\fromto\4\range\y;left_shoulder_roll_link\body\pos\1\range\y"/>
+    <numeric name="wheeled_box/spine/torso/left_arm_7dof/left_shoulder_roll_link\geom\fromto\5\range\y" size="2" data="-0.029999999999999999 -0.080000000000000002"/>
+    <text name="wheeled_box/spine/torso/left_arm_7dof/left_shoulder_roll_z_offset" data="left_shoulder_roll_link\geom\fromto\5\range\y;left_shoulder_roll_link\body\pos\2\range\y"/>
+    <numeric name="wheeled_box/spine/torso/left_arm_7dof/left_shoulder_link\geom\fromto\5\range\y" size="2" data="-0.040000000000000001 -0.10000000000000001"/>
+    <text name="wheeled_box/spine/torso/left_arm_7dof/left_shoulder_link_length" data="left_shoulder_link\geom\fromto\5\range\y;left_shoulder_yaw_link\body\pos\2\range\y-0.02"/>
+    <numeric name="wheeled_box/spine/torso/left_arm_7dof/left_upper_arm\geom\fromto\5\range\y" size="2" data="-0.029999999999999999 -0.20000000000000001"/>
+    <text name="wheeled_box/spine/torso/left_arm_7dof/left_upper_arm_length" data="left_upper_arm\geom\fromto\5\range\y;left_elbow_link\body\pos\2\range\y-0.02"/>
+    <numeric name="wheeled_box/spine/torso/left_arm_7dof/left_forearm\geom\fromto\5\range\y" size="2" data="-0.029999999999999999 -0.20000000000000001"/>
+    <text name="wheeled_box/spine/torso/left_arm_7dof/left_forearm_length" data="left_forearm\geom\fromto\5\range\y;left_wrist_yaw_link\body\pos\2\range\y-0.02"/>
+    <numeric name="wheeled_box/spine/torso/right_arm_7dof/right_shoulder_roll_link\geom\fromto\4\range\y" size="2" data="-0.10000000000000001 -0.040000000000000001"/>
+    <text name="wheeled_box/spine/torso/right_arm_7dof/right_shoulder_roll_y_offset" data="right_shoulder_roll_link\geom\fromto\4\range\y;right_shoulder_roll_link\body\pos\1\range\y"/>
+    <numeric name="wheeled_box/spine/torso/right_arm_7dof/right_shoulder_roll_link\geom\fromto\5\range\y" size="2" data="-0.029999999999999999 -0.080000000000000002"/>
+    <text name="wheeled_box/spine/torso/right_arm_7dof/right_shoulder_roll_z_offset" data="right_shoulder_roll_link\geom\fromto\5\range\y;right_shoulder_roll_link\body\pos\2\range\y"/>
+    <numeric name="wheeled_box/spine/torso/right_arm_7dof/right_shoulder_link\geom\fromto\5\range\y" size="2" data="-0.040000000000000001 -0.10000000000000001"/>
+    <text name="wheeled_box/spine/torso/right_arm_7dof/right_shoulder_link_length" data="right_shoulder_link\geom\fromto\5\range\y;right_shoulder_yaw_link\body\pos\2\range\y-0.02"/>
+    <numeric name="wheeled_box/spine/torso/right_arm_7dof/right_upper_arm\geom\fromto\5\range\y" size="2" data="-0.029999999999999999 -0.20000000000000001"/>
+    <text name="wheeled_box/spine/torso/right_arm_7dof/right_upper_arm_length" data="right_upper_arm\geom\fromto\5\range\y;right_elbow_link\body\pos\2\range\y-0.02"/>
+    <numeric name="wheeled_box/spine/torso/right_arm_7dof/right_forearm\geom\fromto\5\range\y" size="2" data="-0.029999999999999999 -0.20000000000000001"/>
+    <text name="wheeled_box/spine/torso/right_arm_7dof/right_forearm_length" data="right_forearm\geom\fromto\5\range\y;right_wrist_yaw_link\body\pos\2\range\y-0.02"/>
+  </custom>
+  <worldbody>
+    <camera name="fixed_cam" class="/" fovy="60" pos="1.2 0.69999999999999996 1.5" xyaxes="-0.44700000000000001 0.89400000000000002 0 -0.51600000000000001 -0.25800000000000001 0.81599999999999995"/>
+    <body name="base" pos="0 0 0.0050000000000000001" gravcomp="1">
+      <joint name="joint_x" class="/" type="slide" axis="1 0 0" range="-2 2"/>
+      <joint name="joint_y" class="/" type="slide" axis="0 1 0" range="-2 2"/>
+      <joint name="joint_th" class="/" range="-3.1415899999999999 3.1415899999999999"/>
+      <site name="wheeled_box_mount" class="/"/>
+      <body name="wheeled_box/">
+        <body name="wheeled_box/wheeled_box_body" pos="0 0 0.050000000000000003" gravcomp="1">
+          <geom name="wheeled_box/base_box" class="wheeled_box/accent_orange" size="0.14999999999999999 0.14999999999999999 0.050000000000000003" pos="0 0 0"/>
+          <geom name="wheeled_box/base_top" class="wheeled_box/body_panel" size="0.13 0.13 0.01" pos="0 0 0.059999999999999998"/>
+          <site name="wheeled_box/spine|spine_3dof|spine_fixed_mount" class="wheeled_box/" pos="0 0 0.070000000000000007"/>
+          <body pos="0 0 0.070000000000000007" name="wheeled_box/spine/">
+            <body name="wheeled_box/spine/spine_base" pos="0 0 0" gravcomp="1">
+              <geom name="wheeled_box/spine/spine_lower_front" class="wheeled_box/spine/body_panel" type="box" condim="1" size="0.044999999999999998 0.0030000000000000001 0.063508207817320694" friction="0 0 0" pos="0 0.042000000000000003 0.063508207817320694"/>
+              <geom name="wheeled_box/spine/spine_lower_back" class="wheeled_box/spine/body_panel" type="box" condim="1" size="0.044999999999999998 0.0030000000000000001 0.063508207817320694" friction="0 0 0" pos="0 -0.042000000000000003 0.063508207817320694"/>
+              <geom name="wheeled_box/spine/spine_lower_left" class="wheeled_box/spine/body_panel" type="box" condim="1" size="0.0030000000000000001 0.039 0.063508207817320694" friction="0 0 0" pos="-0.042000000000000003 0 0.063508207817320694"/>
+              <geom name="wheeled_box/spine/spine_lower_right" class="wheeled_box/spine/body_panel" type="box" condim="1" size="0.0030000000000000001 0.039 0.063508207817320694" friction="0 0 0" pos="0.042000000000000003 0 0.063508207817320694"/>
+              <body name="wheeled_box/spine/spine_middle" pos="0 0 0" gravcomp="1">
+                <joint name="wheeled_box/spine/spine_joint_lower" class="wheeled_box/spine/" type="slide" axis="0 0 1" range="0 0.087016415634641381" armature="10" damping="200"/>
+                <geom name="wheeled_box/spine/spine_middle_front" class="wheeled_box/spine/body_panel" type="box" condim="1" size="0.037999999999999999 0.0030000000000000001 0.063508207817320694" friction="0 0 0" pos="0 0.035000000000000003 0.063508207817320694"/>
+                <geom name="wheeled_box/spine/spine_middle_back" class="wheeled_box/spine/body_panel" type="box" condim="1" size="0.037999999999999999 0.0030000000000000001 0.063508207817320694" friction="0 0 0" pos="0 -0.035000000000000003 0.063508207817320694"/>
+                <geom name="wheeled_box/spine/spine_middle_left" class="wheeled_box/spine/body_panel" type="box" condim="1" size="0.0030000000000000001 0.032000000000000001 0.063508207817320694" friction="0 0 0" pos="-0.035000000000000003 0 0.063508207817320694"/>
+                <geom name="wheeled_box/spine/spine_middle_right" class="wheeled_box/spine/body_panel" type="box" condim="1" size="0.0030000000000000001 0.032000000000000001 0.063508207817320694" friction="0 0 0" pos="0.035000000000000003 0 0.063508207817320694"/>
+                <body name="wheeled_box/spine/spine_upper" pos="0 0 0" gravcomp="1">
+                  <joint name="wheeled_box/spine/spine_joint_upper" class="wheeled_box/spine/" type="slide" axis="0 0 1" range="0 0.087016415634641381" armature="5" damping="100"/>
+                  <geom name="wheeled_box/spine/spine_upper_front" class="wheeled_box/spine/body_panel" type="box" condim="1" size="0.031 0.0030000000000000001 0.063508207817320694" friction="0 0 0" pos="0 0.028000000000000001 0.063508207817320694"/>
+                  <geom name="wheeled_box/spine/spine_upper_back" class="wheeled_box/spine/body_panel" type="box" condim="1" size="0.031 0.0030000000000000001 0.063508207817320694" friction="0 0 0" pos="0 -0.028000000000000001 0.063508207817320694"/>
+                  <geom name="wheeled_box/spine/spine_upper_left" class="wheeled_box/spine/body_panel" type="box" condim="1" size="0.0030000000000000001 0.025000000000000001 0.063508207817320694" friction="0 0 0" pos="-0.028000000000000001 0 0.063508207817320694"/>
+                  <geom name="wheeled_box/spine/spine_upper_right" class="wheeled_box/spine/body_panel" type="box" condim="1" size="0.0030000000000000001 0.025000000000000001 0.063508207817320694" friction="0 0 0" pos="0.028000000000000001 0 0.063508207817320694"/>
+                  <site name="wheeled_box/spine/torso|torso_lean_mount" class="wheeled_box/spine/" pos="0 0 0.12701641563464139"/>
+                  <body pos="0 0 0.12701641563464139" name="wheeled_box/spine/torso/">
+                    <body name="wheeled_box/spine/torso/torso_body" pos="0 0 0" gravcomp="1">
+                      <geom name="wheeled_box/spine/torso/torso_main" class="wheeled_box/spine/torso/body_panel" type="box" size="0.050000000000000003 0.10000000000000001 0.10000000000000001" pos="0 0 0.10000000000000001"/>
+                      <geom name="wheeled_box/spine/torso/torso_accent" class="wheeled_box/spine/torso/accent_orange" type="box" size="0.051999999999999998 0.10199999999999999 0.02" pos="0 0 0.02"/>
+                      <geom name="wheeled_box/spine/torso/left_shoulder_cap" class="wheeled_box/spine/torso/" type="cylinder" size="0.050000000000000003 0.014999999999999999" rgba="0.95999999999999996 0.52000000000000002 0.12 1" density="100" pos="0 0.12 0.14000000000000001" euler="1.5708 0 0"/>
+                      <geom name="wheeled_box/spine/torso/right_shoulder_cap" class="wheeled_box/spine/torso/" type="cylinder" size="0.050000000000000003 0.014999999999999999" rgba="0.95999999999999996 0.52000000000000002 0.12 1" density="100" pos="0 -0.12 0.14000000000000001" euler="1.5708 0 0"/>
+                      <body name="wheeled_box/spine/torso/head" pos="0 0 0.22" gravcomp="1">
+                        <geom name="wheeled_box/spine/torso/neck" class="wheeled_box/spine/torso/body_panel" type="cylinder" size="0.021999999999999999 0.014999999999999999" pos="0 0 0"/>
+                        <geom name="wheeled_box/spine/torso/head_face" class="wheeled_box/spine/torso/" type="capsule" size="0.050000000000000003" rgba="0.97999999999999998 0.95999999999999996 0.93999999999999995 1" fromto="0 0 0.040000000000000001 0 0 0.070000000000000007"/>
+                        <geom name="wheeled_box/spine/torso/head_cap" class="wheeled_box/spine/torso/" type="cylinder" size="0.055 0.02" rgba="0.95999999999999996 0.52000000000000002 0.12 1" pos="0 0 0.10000000000000001"/>
+                        <geom name="wheeled_box/spine/torso/head_cap_band" class="wheeled_box/spine/torso/" type="cylinder" size="0.10000000000000001 0.0040000000000000001" rgba="0.95999999999999996 0.52000000000000002 0.12 1" pos="0 0 0.080000000000000002"/>
+                        <geom name="wheeled_box/spine/torso/left_eye" class="wheeled_box/spine/torso/" type="capsule" size="0.0060000000000000001" rgba="0.10000000000000001 0.10000000000000001 0.10000000000000001 1" fromto="0.048000000000000001 0.017999999999999999 0.040000000000000001 0.048000000000000001 0.017999999999999999 0.059999999999999998"/>
+                        <geom name="wheeled_box/spine/torso/right_eye" class="wheeled_box/spine/torso/" type="capsule" size="0.0060000000000000001" rgba="0.10000000000000001 0.10000000000000001 0.10000000000000001 1" fromto="0.048000000000000001 -0.017999999999999999 0.040000000000000001 0.048000000000000001 -0.017999999999999999 0.059999999999999998"/>
+                      </body>
+                      <site name="wheeled_box/spine/torso/left_arm_7dof_mount" class="wheeled_box/spine/torso/" pos="0 0.14000000000000001 0.14000000000000001" euler="0 0 0"/>
+                      <body pos="0 0.14000000000000001 0.14000000000000001" euler="0 0 0" name="wheeled_box/spine/torso/left_arm_7dof/">
+                        <body name="wheeled_box/spine/torso/left_arm_7dof/left_shoulder_pitch_link" pos="0 0.02 0" gravcomp="1">
+                          <geom name="wheeled_box/spine/torso/left_arm_7dof/left_shoulder_pitch_motor" class="wheeled_box/spine/torso/left_arm_7dof/small_motor" pos="0 0 0" euler="1.5708 0 0"/>
+                          <joint name="wheeled_box/spine/torso/left_arm_7dof/left_shoulder_pitch" class="wheeled_box/spine/torso/left_arm_7dof/shoulder" axis="0 1 0"/>
+                          <geom name="wheeled_box/spine/torso/left_arm_7dof/left_shoulder_roll_link" class="wheeled_box/spine/torso/left_arm_7dof/" type="box" size="0.017000000000000001 0.017000000000000001" rgba="0.96999999999999997 0.94999999999999996 0.93000000000000005 1" fromto="0 0 0 0 0.072979748672722555 -0.051766119630913848"/>
+                          <body name="wheeled_box/spine/torso/left_arm_7dof/left_shoulder_roll_link" pos="0 0.072979748672722555 -0.051766119630913848" gravcomp="1">
+                            <geom name="wheeled_box/spine/torso/left_arm_7dof/left_shoulder_roll_motor" class="wheeled_box/spine/torso/left_arm_7dof/small_motor" pos="0 0 0" euler="0 1.5708 0"/>
+                            <joint name="wheeled_box/spine/torso/left_arm_7dof/left_shoulder_roll" class="wheeled_box/spine/torso/left_arm_7dof/shoulder" axis="1 0 0" range="-0.5 2.7999999999999998"/>
+                            <geom name="wheeled_box/spine/torso/left_arm_7dof/left_shoulder_link" class="wheeled_box/spine/torso/left_arm_7dof/" type="cylinder" size="0.025000000000000001" rgba="0.96999999999999997 0.94999999999999996 0.93000000000000005 1" fromto="0 0 -0.024 0 0 -0.065222068125249347"/>
+                            <body name="wheeled_box/spine/torso/left_arm_7dof/left_shoulder_yaw_link" pos="0 0 -0.085222068125249351" gravcomp="1">
+                              <geom name="wheeled_box/spine/torso/left_arm_7dof/left_shoulder_yaw_motor" class="wheeled_box/spine/torso/left_arm_7dof/small_motor" pos="0 0 0" euler="0 0 0"/>
+                              <joint name="wheeled_box/spine/torso/left_arm_7dof/left_shoulder_yaw" class="wheeled_box/spine/torso/left_arm_7dof/shoulder" axis="0 0 1"/>
+                              <geom name="wheeled_box/spine/torso/left_arm_7dof/left_upper_arm" class="wheeled_box/spine/torso/left_arm_7dof/" type="cylinder" size="0.025000000000000001" rgba="0.96999999999999997 0.94999999999999996 0.93000000000000005 1" fromto="0 0 -0.02 0 0 -0.086156919570658602"/>
+                              <body name="wheeled_box/spine/torso/left_arm_7dof/left_elbow_link" pos="0 0 -0.10615691957065861" gravcomp="1">
+                                <geom name="wheeled_box/spine/torso/left_arm_7dof/left_elbow_motor" class="wheeled_box/spine/torso/left_arm_7dof/small_motor" pos="0 0 0" euler="1.5708 0 0"/>
+                                <joint name="wheeled_box/spine/torso/left_arm_7dof/left_elbow_pitch" class="wheeled_box/spine/torso/left_arm_7dof/elbow" axis="0 1 0"/>
+                                <geom name="wheeled_box/spine/torso/left_arm_7dof/left_forearm" class="wheeled_box/spine/torso/left_arm_7dof/" type="cylinder" size="0.02" rgba="0.96999999999999997 0.94999999999999996 0.93000000000000005 1" fromto="0 0 -0.02 0 0 -0.064790267786433237"/>
+                                <body name="wheeled_box/spine/torso/left_arm_7dof/left_wrist_yaw_link" pos="0 0 -0.08479026778643324" gravcomp="1">
+                                  <geom name="wheeled_box/spine/torso/left_arm_7dof/left_wrist_yaw_motor" class="wheeled_box/spine/torso/left_arm_7dof/small_motor" size="0.02 0.014999999999999999" pos="0 0 0" euler="0 0 0"/>
+                                  <joint name="wheeled_box/spine/torso/left_arm_7dof/left_wrist_yaw" class="wheeled_box/spine/torso/left_arm_7dof/wrist" axis="0 0 1"/>
+                                  <body name="wheeled_box/spine/torso/left_arm_7dof/left_wrist_pitch_link" pos="0 0 -0.029999999999999999" gravcomp="1">
+                                    <geom name="wheeled_box/spine/torso/left_arm_7dof/left_wrist_pitch_motor" class="wheeled_box/spine/torso/left_arm_7dof/small_motor" size="0.02 0.014999999999999999" pos="0 0 0" euler="1.5708 0 0"/>
+                                    <joint name="wheeled_box/spine/torso/left_arm_7dof/left_wrist_pitch" class="wheeled_box/spine/torso/left_arm_7dof/wrist" axis="0 1 0"/>
+                                    <body name="wheeled_box/spine/torso/left_arm_7dof/left_wrist_roll_link" pos="0 0 -0.029999999999999999" gravcomp="1">
+                                      <geom name="wheeled_box/spine/torso/left_arm_7dof/left_wrist_roll_motor" class="wheeled_box/spine/torso/left_arm_7dof/small_motor" size="0.017999999999999999 0.012" pos="0 0 0" euler="0 0 0"/>
+                                      <joint name="wheeled_box/spine/torso/left_arm_7dof/left_wrist_roll" class="wheeled_box/spine/torso/left_arm_7dof/wrist" axis="0 0 1"/>
+                                      <geom name="wheeled_box/spine/torso/left_arm_7dof/left_gripper_base" class="wheeled_box/spine/torso/left_arm_7dof/body_panel" type="box" size="0.02 0.040000000000000001 0.014999999999999999" pos="0 0 -0.035000000000000003"/>
+                                      <body name="wheeled_box/spine/torso/left_arm_7dof/left_finger_left" pos="0 0.029999999999999999 -0.044999999999999998" gravcomp="1">
+                                        <geom name="wheeled_box/spine/torso/left_arm_7dof/left_finger_left_geom" class="wheeled_box/spine/torso/left_arm_7dof/gripper_finger" type="box" size="0.014999999999999999 0.0080000000000000002 0.040000000000000001" pos="0 0 -0.02"/>
+                                      </body>
+                                      <body name="wheeled_box/spine/torso/left_arm_7dof/left_finger_right" pos="0 -0.029999999999999999 -0.044999999999999998" gravcomp="1">
+                                        <geom name="wheeled_box/spine/torso/left_arm_7dof/left_finger_right_geom" class="wheeled_box/spine/torso/left_arm_7dof/gripper_finger" type="box" size="0.014999999999999999 0.0080000000000000002 0.040000000000000001" pos="0 0 -0.02"/>
+                                      </body>
+                                      <site name="wheeled_box/spine/torso/left_arm_7dof/left_end_effector" class="wheeled_box/spine/torso/left_arm_7dof/" group="1" pos="0 0 -0.089999999999999997" euler="3.1415899999999999 0 1.5708"/>
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                            </body>
+                          </body>
+                        </body>
+                      </body>
+                      <site name="wheeled_box/spine/torso/right_arm_7dof_mount" class="wheeled_box/spine/torso/" pos="0 -0.14000000000000001 0.14000000000000001" euler="0 0 0"/>
+                      <body pos="0 -0.14000000000000001 0.14000000000000001" euler="0 0 0" name="wheeled_box/spine/torso/right_arm_7dof/">
+                        <body name="wheeled_box/spine/torso/right_arm_7dof/right_shoulder_pitch_link" pos="0 -0.02 0" gravcomp="1">
+                          <geom name="wheeled_box/spine/torso/right_arm_7dof/right_shoulder_pitch_motor" class="wheeled_box/spine/torso/right_arm_7dof/small_motor" pos="0 0 0" euler="1.5708 0 0"/>
+                          <joint name="wheeled_box/spine/torso/right_arm_7dof/right_shoulder_pitch" class="wheeled_box/spine/torso/right_arm_7dof/shoulder" axis="0 1 0"/>
+                          <geom name="wheeled_box/spine/torso/right_arm_7dof/right_shoulder_roll_link" class="wheeled_box/spine/torso/right_arm_7dof/" type="box" size="0.017000000000000001 0.017000000000000001" rgba="0.96999999999999997 0.94999999999999996 0.93000000000000005 1" fromto="0 0 0 0 -0.062843742018960175 -0.044982733683726156"/>
+                          <body name="wheeled_box/spine/torso/right_arm_7dof/right_shoulder_roll_link" pos="0 -0.062843742018960175 -0.044982733683726156" gravcomp="1">
+                            <geom name="wheeled_box/spine/torso/right_arm_7dof/right_shoulder_roll_motor" class="wheeled_box/spine/torso/right_arm_7dof/small_motor" pos="0 0 0" euler="0 1.5708 0"/>
+                            <joint name="wheeled_box/spine/torso/right_arm_7dof/right_shoulder_roll" class="wheeled_box/spine/torso/right_arm_7dof/shoulder" axis="1 0 0" range="-2.7999999999999998 0.5"/>
+                            <geom name="wheeled_box/spine/torso/right_arm_7dof/right_shoulder_link" class="wheeled_box/spine/torso/right_arm_7dof/" type="cylinder" size="0.025000000000000001" rgba="0.96999999999999997 0.94999999999999996 0.93000000000000005 1" fromto="0 0 -0.024 0 0 -0.056009636506172002"/>
+                            <body name="wheeled_box/spine/torso/right_arm_7dof/right_shoulder_yaw_link" pos="0 0 -0.076009636506171999" gravcomp="1">
+                              <geom name="wheeled_box/spine/torso/right_arm_7dof/right_shoulder_yaw_motor" class="wheeled_box/spine/torso/right_arm_7dof/small_motor" pos="0 0 0" euler="0 0 0"/>
+                              <joint name="wheeled_box/spine/torso/right_arm_7dof/right_shoulder_yaw" class="wheeled_box/spine/torso/right_arm_7dof/shoulder" axis="0 0 1"/>
+                              <geom name="wheeled_box/spine/torso/right_arm_7dof/right_upper_arm" class="wheeled_box/spine/torso/right_arm_7dof/" type="cylinder" size="0.025000000000000001" rgba="0.96999999999999997 0.94999999999999996 0.93000000000000005 1" fromto="0 0 -0.02 0 0 -0.13559275157078016"/>
+                              <body name="wheeled_box/spine/torso/right_arm_7dof/right_elbow_link" pos="0 0 -0.15559275157078015" gravcomp="1">
+                                <geom name="wheeled_box/spine/torso/right_arm_7dof/right_elbow_motor" class="wheeled_box/spine/torso/right_arm_7dof/small_motor" pos="0 0 0" euler="1.5708 0 0"/>
+                                <joint name="wheeled_box/spine/torso/right_arm_7dof/right_elbow_pitch" class="wheeled_box/spine/torso/right_arm_7dof/elbow" axis="0 1 0"/>
+                                <geom name="wheeled_box/spine/torso/right_arm_7dof/right_forearm" class="wheeled_box/spine/torso/right_arm_7dof/" type="cylinder" size="0.02" rgba="0.96999999999999997 0.94999999999999996 0.93000000000000005 1" fromto="0 0 -0.02 0 0 -0.11995415602709665"/>
+                                <body name="wheeled_box/spine/torso/right_arm_7dof/right_wrist_yaw_link" pos="0 0 -0.13995415602709665" gravcomp="1">
+                                  <geom name="wheeled_box/spine/torso/right_arm_7dof/right_wrist_yaw_motor" class="wheeled_box/spine/torso/right_arm_7dof/small_motor" size="0.02 0.014999999999999999" pos="0 0 0" euler="0 0 0"/>
+                                  <joint name="wheeled_box/spine/torso/right_arm_7dof/right_wrist_yaw" class="wheeled_box/spine/torso/right_arm_7dof/wrist" axis="0 0 1"/>
+                                  <body name="wheeled_box/spine/torso/right_arm_7dof/right_wrist_pitch_link" pos="0 0 -0.029999999999999999" gravcomp="1">
+                                    <geom name="wheeled_box/spine/torso/right_arm_7dof/right_wrist_pitch_motor" class="wheeled_box/spine/torso/right_arm_7dof/small_motor" size="0.02 0.014999999999999999" pos="0 0 0" euler="1.5708 0 0"/>
+                                    <joint name="wheeled_box/spine/torso/right_arm_7dof/right_wrist_pitch" class="wheeled_box/spine/torso/right_arm_7dof/wrist" axis="0 1 0"/>
+                                    <body name="wheeled_box/spine/torso/right_arm_7dof/right_wrist_roll_link" pos="0 0 -0.029999999999999999" gravcomp="1">
+                                      <geom name="wheeled_box/spine/torso/right_arm_7dof/right_wrist_roll_motor" class="wheeled_box/spine/torso/right_arm_7dof/small_motor" size="0.017999999999999999 0.012" pos="0 0 0" euler="0 0 0"/>
+                                      <joint name="wheeled_box/spine/torso/right_arm_7dof/right_wrist_roll" class="wheeled_box/spine/torso/right_arm_7dof/wrist" axis="0 0 1"/>
+                                      <geom name="wheeled_box/spine/torso/right_arm_7dof/right_gripper_base" class="wheeled_box/spine/torso/right_arm_7dof/body_panel" type="box" size="0.02 0.040000000000000001 0.014999999999999999" pos="0 0 -0.035000000000000003"/>
+                                      <body name="wheeled_box/spine/torso/right_arm_7dof/right_finger_left" pos="0 0.029999999999999999 -0.044999999999999998" gravcomp="1">
+                                        <geom name="wheeled_box/spine/torso/right_arm_7dof/right_finger_left_geom" class="wheeled_box/spine/torso/right_arm_7dof/gripper_finger" type="box" size="0.014999999999999999 0.0080000000000000002 0.040000000000000001" pos="0 0 -0.02"/>
+                                      </body>
+                                      <body name="wheeled_box/spine/torso/right_arm_7dof/right_finger_right" pos="0 -0.029999999999999999 -0.044999999999999998" gravcomp="1">
+                                        <geom name="wheeled_box/spine/torso/right_arm_7dof/right_finger_right_geom" class="wheeled_box/spine/torso/right_arm_7dof/gripper_finger" type="box" size="0.014999999999999999 0.0080000000000000002 0.040000000000000001" pos="0 0 -0.02"/>
+                                      </body>
+                                      <site name="wheeled_box/spine/torso/right_arm_7dof/right_end_effector" class="wheeled_box/spine/torso/right_arm_7dof/" group="1" pos="0 0 -0.089999999999999997" euler="3.1415899999999999 0 1.5708"/>
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                            </body>
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <camera name="body_cam" class="/" mode="trackcom" fovy="60" pos="1.5 0 0.80000000000000004" xyaxes="0 1 0 -0.5 0 0.86599999999999999"/>
+    </body>
+  </worldbody>
+  <actuator>
+    <position name="joint_x" class="/" joint="joint_x" kp="100000" kv="5000"/>
+    <position name="joint_y" class="/" joint="joint_y" kp="100000" kv="5000"/>
+    <position name="joint_th" class="/" joint="joint_th" kp="5000" kv="100"/>
+    <position name="wheeled_box/spine/spine_joint_lower" class="wheeled_box/spine/" ctrlrange="0 0.087016415634641381" forcerange="-5000 5000" joint="wheeled_box/spine/spine_joint_lower" kp="20000" kv="5000"/>
+    <position name="wheeled_box/spine/spine_joint_upper" class="wheeled_box/spine/" ctrlrange="0 0.087016415634641381" forcerange="-4000 4000" joint="wheeled_box/spine/spine_joint_upper" kp="15000" kv="5000"/>
+    <position name="wheeled_box/spine/torso/left_arm_7dof/left_shoulder_pitch" class="wheeled_box/spine/torso/left_arm_7dof/" ctrlrange="-3.1415899999999999 3.1415899999999999" forcerange="-100 100" joint="wheeled_box/spine/torso/left_arm_7dof/left_shoulder_pitch" kp="200" kv="20"/>
+    <position name="wheeled_box/spine/torso/left_arm_7dof/left_shoulder_roll" class="wheeled_box/spine/torso/left_arm_7dof/" ctrlrange="-3.1415899999999999 3.1415899999999999" forcerange="-100 100" joint="wheeled_box/spine/torso/left_arm_7dof/left_shoulder_roll" kp="200" kv="20"/>
+    <position name="wheeled_box/spine/torso/left_arm_7dof/left_shoulder_yaw" class="wheeled_box/spine/torso/left_arm_7dof/" ctrlrange="-3.1415899999999999 3.1415899999999999" forcerange="-100 100" joint="wheeled_box/spine/torso/left_arm_7dof/left_shoulder_yaw" kp="200" kv="20"/>
+    <position name="wheeled_box/spine/torso/left_arm_7dof/left_elbow_pitch" class="wheeled_box/spine/torso/left_arm_7dof/" ctrlrange="-2.5 2.5" forcerange="-80 80" joint="wheeled_box/spine/torso/left_arm_7dof/left_elbow_pitch" kp="150" kv="15"/>
+    <position name="wheeled_box/spine/torso/left_arm_7dof/left_wrist_yaw" class="wheeled_box/spine/torso/left_arm_7dof/" ctrlrange="-2 2" forcerange="-40 40" joint="wheeled_box/spine/torso/left_arm_7dof/left_wrist_yaw" kp="60" kv="6"/>
+    <position name="wheeled_box/spine/torso/left_arm_7dof/left_wrist_pitch" class="wheeled_box/spine/torso/left_arm_7dof/" ctrlrange="-2 2" forcerange="-40 40" joint="wheeled_box/spine/torso/left_arm_7dof/left_wrist_pitch" kp="60" kv="6"/>
+    <position name="wheeled_box/spine/torso/left_arm_7dof/left_wrist_roll" class="wheeled_box/spine/torso/left_arm_7dof/" ctrlrange="-2 2" forcerange="-40 40" joint="wheeled_box/spine/torso/left_arm_7dof/left_wrist_roll" kp="60" kv="6"/>
+    <position name="wheeled_box/spine/torso/right_arm_7dof/right_shoulder_pitch" class="wheeled_box/spine/torso/right_arm_7dof/" ctrlrange="-3.1415899999999999 3.1415899999999999" forcerange="-100 100" joint="wheeled_box/spine/torso/right_arm_7dof/right_shoulder_pitch" kp="200" kv="20"/>
+    <position name="wheeled_box/spine/torso/right_arm_7dof/right_shoulder_roll" class="wheeled_box/spine/torso/right_arm_7dof/" ctrlrange="-3.1415899999999999 3.1415899999999999" forcerange="-100 100" joint="wheeled_box/spine/torso/right_arm_7dof/right_shoulder_roll" kp="200" kv="20"/>
+    <position name="wheeled_box/spine/torso/right_arm_7dof/right_shoulder_yaw" class="wheeled_box/spine/torso/right_arm_7dof/" ctrlrange="-3.1415899999999999 3.1415899999999999" forcerange="-100 100" joint="wheeled_box/spine/torso/right_arm_7dof/right_shoulder_yaw" kp="200" kv="20"/>
+    <position name="wheeled_box/spine/torso/right_arm_7dof/right_elbow_pitch" class="wheeled_box/spine/torso/right_arm_7dof/" ctrlrange="-2.5 2.5" forcerange="-80 80" joint="wheeled_box/spine/torso/right_arm_7dof/right_elbow_pitch" kp="150" kv="15"/>
+    <position name="wheeled_box/spine/torso/right_arm_7dof/right_wrist_yaw" class="wheeled_box/spine/torso/right_arm_7dof/" ctrlrange="-2 2" forcerange="-40 40" joint="wheeled_box/spine/torso/right_arm_7dof/right_wrist_yaw" kp="60" kv="6"/>
+    <position name="wheeled_box/spine/torso/right_arm_7dof/right_wrist_pitch" class="wheeled_box/spine/torso/right_arm_7dof/" ctrlrange="-2 2" forcerange="-40 40" joint="wheeled_box/spine/torso/right_arm_7dof/right_wrist_pitch" kp="60" kv="6"/>
+    <position name="wheeled_box/spine/torso/right_arm_7dof/right_wrist_roll" class="wheeled_box/spine/torso/right_arm_7dof/" ctrlrange="-2 2" forcerange="-40 40" joint="wheeled_box/spine/torso/right_arm_7dof/right_wrist_roll" kp="60" kv="6"/>
+  </actuator>
+  <keyframe>
+    <key name="home" qpos="-0.25 0 0 0 0 0.40000000000000002 0.80000000000000004 0 -2.5 -0.29999999999999999 0.80000000000000004 1 0.40000000000000002 -0.80000000000000004 0 -2.5 0.29999999999999999 0.80000000000000004 -1" ctrl="-0.25 0 0 0 0 0.40000000000000002 0.80000000000000004 0 -2.5 -0.29999999999999999 0.80000000000000004 1 0.40000000000000002 -0.80000000000000004 0 -2.5 0.29999999999999999 0.80000000000000004 -1"/>
+    <key name="penalty_default_qpos_weight" qpos="100 10 10 10 10 1 1 1 1 1 1 1 1 1 1 1 1 1 1"/>
+    <key name="mink_damping_scale" qpos="1000 1000 1000 100 100 1 1 1 1 1 1 1 1 1 1 1 1 1 1"/>
+  </keyframe>
+</mujoco>

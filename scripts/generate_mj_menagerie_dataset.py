@@ -31,7 +31,9 @@ if __name__ == "__main__":
         "assets/mjcf/unitree_go1/go1.xml",
         "assets/mjcf/unitree_go2/go2.xml",
         "assets/mjcf/unitree_a1/a1.xml",
-        "assets/mjcf/agility_cassie/cassie_collision_enabled.xml",
+        # Cassie 제외: achilles-rod 가 ball joint 인데 base_env.post_hardware_reset 이
+        # hinge/slide 만 허용해 "Dynamic foints can only be slide or hinge" 로 멈춘다.
+        # "assets/mjcf/agility_cassie/cassie_collision_enabled.xml",
         "assets/mjcf/aloha/partial_aloha.xml",
         "assets/mjcf/universal_robots_ur5e/ur5e.xml",
         "assets/mjcf/universal_robots_ur10e/ur10e.xml",
